@@ -1,0 +1,5 @@
+mysql/
+config/environment/
+config/global.ini.php
+config/global.php
+config/manifest.inc.php

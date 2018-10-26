@@ -1,0 +1,13 @@
+[Unit]
+Description=matomo docker pod
+Requires=docker.service
+After=docker.service
+
+[Service]
+Environment="MYSQL_ROOT_PASSWORD=OVERRIDE_ME_WHEN_YOU_INSTALL_ME"
+Restart=always
+ExecStart=/usr/local/bin/docker-compose -f /home/matomo/pod-matomo/docker-compose.yml up
+ExecStop=/usr/local/bin/docker-compose  -f /home/matomo/pod-matomo/docker-compose.yml down
+
+[Install]
+WantedBy=default.target
